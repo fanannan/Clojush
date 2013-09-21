@@ -74,7 +74,8 @@
    NOT SAFE for invalid positions."
   [type position state]
   (let [stack (type state)]
-    (if (empty? stack)
+;    (if (empty? stack)
+    (if (<= (count stack) position)
       :no-stack-item
       (nth stack position))))
 
